@@ -18,7 +18,7 @@ const changeNav = () => {
   }
 };
 window.addEventListener("scroll", changeNav);
-
+// 01 scroll
 const linkEnter = event => {
   event.target.style.borderBottom = `2px solid ${event.target.style.color}`;
   event.target.style.marginBottom = "-2px";
@@ -26,6 +26,7 @@ const linkEnter = event => {
 links.forEach(item => {
   item.addEventListener("mouseenter", linkEnter);
 });
+// 02 mouseenter
 const linkLeave = event => {
   event.target.style.borderBottom = "";
   event.target.style.marginBottom = "";
@@ -33,16 +34,16 @@ const linkLeave = event => {
 links.forEach(item => {
   item.addEventListener("mouseleave", linkLeave);
 });
-
+// 03 mouseleave
 const btns = document.querySelectorAll(".btn");
 const lgBtn = () => {
   event.preventDefault;
   event.target.style.transform = "scale(1.2)";
 };
-
 btns.forEach(item => {
   item.addEventListener("click", lgBtn);
 });
+// 04 click
 const smBtn = () => {
   event.preventDefault;
   event.target.style.transform = "scale(1)";
@@ -50,3 +51,46 @@ const smBtn = () => {
 btns.forEach(item => {
   item.addEventListener("dblclick", smBtn);
 });
+// 05 dblclick
+const imgSizes = () => {
+  const imgs = document.querySelectorAll("img");
+  imgs.forEach(item => {
+    item.style.borderRadius = "50%";
+    item.style.transition = "all 300ms";
+    item.style.zIndex = "-100";
+  });
+};
+window.addEventListener("resize", imgSizes);
+// 06 resize
+const displaySocial = () => {
+  const body = document.querySelector("body");
+  const social = document.createElement("p");
+  body.appendChild(social);
+  social.style.height = "70px";
+  social.style.width = "220px";
+  social.style.background = "#17a2b8";
+  social.style.color = "white";
+  social.style.border = "2px dashed #c0c0c0";
+  social.style.borderRadius = "10px";
+  social.style.position = "fixed";
+  social.style.top = "200px";
+  social.style.left = "170px";
+  social.style.textAlign = "center";
+  social.style.padding = "10px";
+  social.textContent = `Follow us on Twitter, Instagram, and Facebook`;
+};
+window.addEventListener("load", displaySocial);
+// 07 load
+const changeBorder = () => {
+  const imgs = document.querySelectorAll("img");
+  imgs.forEach(item => {
+    item.style.border = "1px solid #17a2b8";
+    item.style.boxShadow = "5em 1em gold;";
+  });
+};
+window.addEventListener("keydown", changeBorder);
+// 08 keydown
+
+// 09 wheel
+
+//10
