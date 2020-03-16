@@ -2,7 +2,7 @@
 const navElement = document.getElementsByClassName("main-navigation")[0];
 const links = document.querySelectorAll("a");
 const changeNav = () => {
-  if (window.scrollY > navElement.scrollHeight) {
+  if (window.scrollY > navElement.style.height) {
     navElement.style.background = "#17a2b8";
     navElement.style.color = "white";
     navElement.style.transition = "all 500ms";
@@ -85,12 +85,25 @@ const changeBorder = () => {
   const imgs = document.querySelectorAll("img");
   imgs.forEach(item => {
     item.style.border = "1px solid #17a2b8";
-    item.style.boxShadow = "5em 1em gold;";
+    // item.style.boxShadow = "5em 1em gold;";
   });
 };
 window.addEventListener("keydown", changeBorder);
 // 08 keydown
 
+const text = document.querySelectorAll("p");
+const fontColor = () => {
+  text.forEach(item => (item.style.color = "#17a2b8"));
+};
+window.addEventListener("wheel", fontColor);
 // 09 wheel
 
-//10
+const h2 = document.querySelectorAll("h2");
+const auxClick = () => {
+  event.target.style.background = "#333333";
+  event.target.style.color = "#ffffff";
+};
+h2.forEach(item => {
+  item.addEventListener("auxclick", auxClick);
+});
+//10 auxclick
