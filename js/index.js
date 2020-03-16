@@ -23,15 +23,13 @@ const linkEnter = event => {
   event.target.style.borderBottom = `2px solid ${event.target.style.color}`;
   event.target.style.marginBottom = "-2px";
 };
-links.forEach(item => {
-  item.addEventListener("mouseenter", linkEnter);
-});
 // 02 mouseenter
 const linkLeave = event => {
   event.target.style.borderBottom = "";
   event.target.style.marginBottom = "";
 };
 links.forEach(item => {
+  item.addEventListener("mouseenter", linkEnter);
   item.addEventListener("mouseleave", linkLeave);
 });
 // 03 mouseleave
@@ -45,7 +43,7 @@ btns.forEach(item => {
 });
 // 04 click
 const smBtn = () => {
-  event.preventDefault;
+  event.preventDefault();
   event.target.style.transform = "scale(1)";
 };
 btns.forEach(item => {
@@ -53,6 +51,7 @@ btns.forEach(item => {
 });
 // 05 dblclick
 const imgSizes = () => {
+  event.preventDefault();
   const imgs = document.querySelectorAll("img");
   imgs.forEach(item => {
     item.style.borderRadius = "50%";
