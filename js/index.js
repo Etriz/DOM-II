@@ -36,6 +36,7 @@ links.forEach(item => {
 const btns = document.querySelectorAll(".btn");
 const lgBtn = () => {
   event.preventDefault;
+  event.stopPropagation();
   event.target.style.transform = "scale(1.2)";
 };
 btns.forEach(item => {
@@ -44,6 +45,7 @@ btns.forEach(item => {
 // 04 click
 const smBtn = () => {
   event.preventDefault();
+  event.stopPropagation();
   event.target.style.transform = "scale(1)";
 };
 btns.forEach(item => {
@@ -106,3 +108,8 @@ h2.forEach(item => {
   item.addEventListener("auxclick", auxClick);
 });
 //10 auxclick
+const bottomParagraphDiv = document.querySelector(".destination");
+const bottomColor = () => {
+  bottomParagraphDiv.style.color = "blue";
+};
+bottomParagraphDiv.addEventListener("click", bottomColor);
